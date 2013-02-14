@@ -1,28 +1,35 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mapeventlistview.h"
+#include "maptreeview.h"
+#include "mapview.h"
+#include "tilepaletteview.h"
 #include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    mpSrcPixmap(NULL),
-    mpPalettePixmap(NULL)
+    mpMapEventListView(new MapEventListView(this)),
+    mpTilePaletteView(new TilePaletteView(this)),
+    mpMapTreeView(new MapTreeView(this)),
+    mpMapView(new MapView(this))
 {
     ui->setupUi(this);
-
-    this->loadPalette();
+    ui->eventListPage->layout()->addWidget(mpMapEventListView);
+    ui->palettePage->layout()->addWidget(mpTilePaletteView);
+    ui->mapTreeFrame->layout()->addWidget(mpMapTreeView);
+    ui->rightContainer->layout()->addWidget(mpMapView);
+    ui->stackedWidget->setCurrentIndex(0);
     this->loadStyleSheet();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    if (mpSrcPixmap != NULL) {
-        delete mpSrcPixmap;
-    }
-    if (mpPalettePixmap != NULL) {
-        delete mpPalettePixmap;
-    }
+    delete mpMapEventListView;
+    delete mpTilePaletteView;
+    delete mpMapTreeView;
+    delete mpMapView;
 }
 
 void MainWindow::loadStyleSheet()
@@ -33,19 +40,4 @@ void MainWindow::loadStyleSheet()
     {
         qApp->setStyleSheet( qss.readAll() );
     }
-}
-
-void MainWindow::loadPalette()
-{
-    mpSrcPixmap = new QPixmap();
-    mpSrcPixmap->load("/Users/sato.daigo/Development/git/star-rpg-framework/html/res/tmx/images/tile_a.png");
-
-    mpPalettePixmap = new QPixmap(256, 1024);
-    QPainter pixPaint(mpPalettePixmap);
-    pixPaint.drawPixmap(QRect(0, 0, 256, 256), *mpSrcPixmap, QRect(0, 0, 256, 256));
-    pixPaint.drawPixmap(QRect(0, 256, 256, 256), *mpSrcPixmap, QRect(256, 0, 256, 256));
-
-    QGraphicsScene *scene = new QGraphicsScene();
-    ui->graphicsView->setScene(scene);
-    scene->addPixmap(*mpPalettePixmap);
 }

@@ -7,6 +7,11 @@ namespace Ui {
 class MainWindow;
 }
 
+class MapEventListView;
+class TilePaletteView;
+class MapTreeView;
+class MapView;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,10 +22,11 @@ public:
 
 private:
     void loadStyleSheet();
-    void loadPalette();
-    QPixmap *mpSrcPixmap;
-    QPixmap *mpPalettePixmap;
     Ui::MainWindow *ui;
+    MapEventListView *mpMapEventListView;
+    TilePaletteView *mpTilePaletteView;
+    MapTreeView *mpMapTreeView;
+    MapView *mpMapView;
 };
 
 #endif // MAINWINDOW_H

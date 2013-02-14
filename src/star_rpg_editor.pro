@@ -12,12 +12,11 @@ TARGET = star_rpg_editor
 TEMPLATE = app
 
 CONFIG += console
-SOURCES += main.cpp\
-        mainwindow.cpp
-
-HEADERS  += mainwindow.h
-
-FORMS    += mainwindow.ui
+SOURCES += *.cpp
+HEADERS += *.h \
+    maptreeview.h \
+    mapview.h
+FORMS   += *.ui
 
 RESOURCES += \
     main.qrc
