@@ -1,5 +1,5 @@
-#ifndef MAPTREEVIEW_H
-#define MAPTREEVIEW_H
+#ifndef MapTreeView_H
+#define MapTreeView_H
 
 #include <QWidget>
 namespace Ui {
@@ -17,4 +17,4 @@ private:
     
 };
 
-#endif // MAPTREEVIEW_H
+#endif // MapTreeView_H

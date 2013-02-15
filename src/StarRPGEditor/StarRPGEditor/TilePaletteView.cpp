@@ -1,5 +1,5 @@
 #include "tilepaletteview.h"
-#include "ui_tilepaletteview.h"
+#include "ui_tile_palette_view.h"
 #include <QPainter>
 #include <QGraphicsScene>
 

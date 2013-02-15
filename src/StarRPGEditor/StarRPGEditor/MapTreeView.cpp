@@ -1,5 +1,5 @@
-#include "maptreeview.h"
-#include "ui_maptreeview.h"
+#include "MapTreeView.h"
+#include "ui_map_tree_view.h"
 
 MapTreeView::MapTreeView(QWidget *parent) :
     QWidget(parent),

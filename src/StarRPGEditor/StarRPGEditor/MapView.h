@@ -1,5 +1,5 @@
-#ifndef MAPVIEW_H
-#define MAPVIEW_H
+#ifndef MapView_H
+#define MapView_H
 
 #include <QWidget>
 
@@ -18,4 +18,4 @@ private:
     
 };
 
-#endif // MAPVIEW_H
+#endif // MapView_H

@@ -42,7 +42,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QGraphicsView" name="mapView"/>
+      <widget class="QGraphicsView" name="MapView"/>
      </item>
      <item row="0" column="0">
       <layout class="QHBoxLayout" name="mapToolPanel">

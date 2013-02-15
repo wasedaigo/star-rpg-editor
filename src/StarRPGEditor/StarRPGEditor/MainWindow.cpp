@@ -1,8 +1,8 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "mapeventlistview.h"
-#include "maptreeview.h"
-#include "mapview.h"
+#include "MainWindow.h"
+#include "ui_main_window.h"
+#include "MapEventListView.h"
+#include "MapTreeView.h"
+#include "MapView.h"
 #include "tilepaletteview.h"
 #include <QFile>
 

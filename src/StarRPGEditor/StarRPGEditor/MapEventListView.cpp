@@ -1,5 +1,5 @@
-#include "mapeventlistview.h"
-#include "ui_mapeventlistview.h"
+#include "MapEventListView.h"
+#include "ui_map_event_list_view.h"
 
 MapEventListView::MapEventListView(QWidget *parent) :
     QWidget(parent),

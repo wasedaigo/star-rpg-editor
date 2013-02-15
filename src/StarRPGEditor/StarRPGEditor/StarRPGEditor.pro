@@ -8,14 +8,14 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = star_rpg_editor
+TARGET = StarRPGEditor
 TEMPLATE = app
 
 CONFIG += console
 SOURCES += *.cpp
 HEADERS += *.h \
-    maptreeview.h \
-    mapview.h
+    MapTreeView.h \
+    MapView.h
 FORMS   += *.ui
 
 RESOURCES += \

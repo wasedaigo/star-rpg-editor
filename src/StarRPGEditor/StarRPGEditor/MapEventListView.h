@@ -1,5 +1,5 @@
-#ifndef MAPEVENTLISTVIEW_H
-#define MAPEVENTLISTVIEW_H
+#ifndef MapEventListView_H
+#define MapEventListView_H
 
 #include <QWidget>
 
@@ -17,4 +17,4 @@ private:
     Ui::MapEventListView *ui;
 };
 
-#endif // MAPEVENTLISTVIEW_H
+#endif // MapEventListView_H

@@ -7,11 +7,6 @@ namespace Ui {
 class MainWindow;
 }
 
-class MapEventListView;
-class TilePaletteView;
-class MapTreeView;
-class MapView;
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -19,14 +14,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    
 private:
-    void loadStyleSheet();
     Ui::MainWindow *ui;
-    MapEventListView *mpMapEventListView;
-    TilePaletteView *mpTilePaletteView;
-    MapTreeView *mpMapTreeView;
-    MapView *mpMapView;
 };
 
 #endif // MAINWINDOW_H
