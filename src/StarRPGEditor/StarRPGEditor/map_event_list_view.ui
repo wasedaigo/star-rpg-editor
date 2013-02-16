@@ -41,13 +41,30 @@
    <item>
     <layout class="QHBoxLayout" name="eventListToolPanel">
      <item>
+      <widget class="QToolButton" name="toolButton">
+       <property name="text">
+        <string>+</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_3">
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QToolButton" name="toolButton_2">
        <property name="text">
-        <string>up</string>
+        <string>-</string>
        </property>
        <property name="icon">
         <iconset resource="main.qrc">
-         <normaloff>:/main/res/icon/pen.xpm</normaloff>:/main/res/icon/pen.xpm</iconset>
+         <normaloff>:/main/res/icon/copy.xpm</normaloff>:/main/res/icon/copy.xpm</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -61,21 +78,7 @@
        </property>
        <property name="icon">
         <iconset resource="main.qrc">
-         <normaloff>:/main/res/icon/four_blocks.xpm</normaloff>:/main/res/icon/four_blocks.xpm</iconset>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QToolButton" name="toolButton">
-       <property name="text">
-        <string>down</string>
-       </property>
-       <property name="icon">
-        <iconset resource="main.qrc">
-         <normaloff>:/main/res/icon/rect.xpm</normaloff>:/main/res/icon/rect.xpm</iconset>
+         <normaloff>:/main/res/icon/paste.xpm</normaloff>:/main/res/icon/paste.xpm</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -111,16 +114,6 @@
        <height>16777215</height>
       </size>
      </property>
-     <item>
-      <property name="text">
-       <string>Ev0001</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Ev0002</string>
-      </property>
-     </item>
     </widget>
    </item>
   </layout>

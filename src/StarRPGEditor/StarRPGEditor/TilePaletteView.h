@@ -6,6 +6,8 @@
 namespace Ui {
 class TilePaletteView;
 }
+class QGraphicsScene;
+class QPixmap;
 
 class TilePaletteView : public QWidget
 {
@@ -16,9 +18,10 @@ public:
 
 private:
     void loadPalette();
-    Ui::TilePaletteView *ui;
-    QPixmap *mpSrcPixmap;
-    QPixmap *mpPalettePixmap;
+    QScopedPointer<Ui::TilePaletteView> mUI;
+    QScopedPointer<QPixmap> mSrcPixmap;
+    QScopedPointer<QPixmap> mPalettePixmap;
+    QScopedPointer<QGraphicsScene> mScene;
 };
 
 #endif // PALETTEVIEW_H

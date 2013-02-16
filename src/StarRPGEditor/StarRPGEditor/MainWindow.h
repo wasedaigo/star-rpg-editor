@@ -11,6 +11,7 @@ class MapEventListView;
 class TilePaletteView;
 class MapTreeView;
 class MapView;
+class MapViewModel;
 
 class MainWindow : public QMainWindow
 {
@@ -22,11 +23,12 @@ public:
 
 private:
     void loadStyleSheet();
-    Ui::MainWindow *ui;
-    MapEventListView *mpMapEventListView;
-    TilePaletteView *mpTilePaletteView;
-    MapTreeView *mpMapTreeView;
-    MapView *mpMapView;
+    QScopedPointer<Ui::MainWindow> mUI;
+    QSharedPointer<MapViewModel> mMapViewModel;
+    QScopedPointer<MapEventListView> mMapEventListView;
+    QScopedPointer<TilePaletteView> mTilePaletteView;
+    QScopedPointer<MapTreeView> mMapTreeView;
+    QScopedPointer<MapView> mMapView;
 };
 
 #endif // MainWindow_H

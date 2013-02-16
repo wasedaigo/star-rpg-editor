@@ -11,9 +11,10 @@ class MapTreeView : public QWidget
     Q_OBJECT
 public:
     explicit MapTreeView(QWidget *parent = 0);
-    
+    ~MapTreeView();
+
 private:
-    Ui::MapTreeView *ui;
+    QScopedPointer<Ui::MapTreeView> mUI;
     
 };
 

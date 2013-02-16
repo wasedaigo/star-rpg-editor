@@ -11,11 +11,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = StarRPGEditor
 TEMPLATE = app
 
-CONFIG += console
+#CONFIG += console
 SOURCES += *.cpp
 HEADERS += *.h \
     MapTreeView.h \
-    MapView.h
+    MapView.h \
+    MapViewModel.h
 FORMS   += *.ui
 
 RESOURCES += \

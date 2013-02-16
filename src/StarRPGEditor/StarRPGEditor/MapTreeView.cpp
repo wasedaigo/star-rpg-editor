@@ -3,7 +3,11 @@
 
 MapTreeView::MapTreeView(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MapTreeView)
+    mUI(new Ui::MapTreeView)
 {
-    ui->setupUi(this);
+    mUI->setupUi(this);
+}
+
+MapTreeView::~MapTreeView() {
+
 }

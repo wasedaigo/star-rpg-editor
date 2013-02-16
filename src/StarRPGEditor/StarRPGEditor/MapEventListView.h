@@ -12,9 +12,10 @@ class MapEventListView : public QWidget
     Q_OBJECT
 public:
     explicit MapEventListView(QWidget *parent = 0);
-    
+    ~MapEventListView();
+
 private:
-    Ui::MapEventListView *ui;
+    QScopedPointer<Ui::MapEventListView> mUI;
 };
 
 #endif // MapEventListView_H

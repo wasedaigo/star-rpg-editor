@@ -3,7 +3,11 @@
 
 MapEventListView::MapEventListView(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MapEventListView)
+    mUI(new Ui::MapEventListView)
 {
-    ui->setupUi(this);
+    mUI->setupUi(this);
+}
+
+MapEventListView::~MapEventListView() {
+
 }

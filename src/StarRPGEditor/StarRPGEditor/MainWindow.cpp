@@ -1,35 +1,31 @@
 #include "MainWindow.h"
-#include "ui_main_window.h"
 #include "MapEventListView.h"
 #include "MapTreeView.h"
 #include "MapView.h"
-#include "tilepaletteview.h"
+#include "MapViewModel.h"
+#include "TilePaletteView.h"
+#include "ui_main_window.h"
 #include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow),
-    mpMapEventListView(new MapEventListView(this)),
-    mpTilePaletteView(new TilePaletteView(this)),
-    mpMapTreeView(new MapTreeView(this)),
-    mpMapView(new MapView(this))
+    mUI(new Ui::MainWindow),
+    mMapViewModel(new MapViewModel()),
+    mMapEventListView(new MapEventListView(this)),
+    mTilePaletteView(new TilePaletteView(this)),
+    mMapTreeView(new MapTreeView(this)),
+    mMapView(new MapView(this, mMapViewModel))
 {
-    ui->setupUi(this);
-    ui->eventListPage->layout()->addWidget(mpMapEventListView);
-    ui->palettePage->layout()->addWidget(mpTilePaletteView);
-    ui->mapTreeFrame->layout()->addWidget(mpMapTreeView);
-    ui->rightContainer->layout()->addWidget(mpMapView);
-    ui->stackedWidget->setCurrentIndex(0);
+    mUI->setupUi(this);
+    mUI->eventListPage->layout()->addWidget(mMapEventListView.data());
+    mUI->palettePage->layout()->addWidget(mTilePaletteView.data());
+    mUI->mapTreeFrame->layout()->addWidget(mMapTreeView.data());
+    mUI->rightContainer->layout()->addWidget(mMapView.data());
+    mUI->stackedWidget->setCurrentIndex(0);
     this->loadStyleSheet();
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-    delete mpMapEventListView;
-    delete mpTilePaletteView;
-    delete mpMapTreeView;
-    delete mpMapView;
+MainWindow::~MainWindow() {
 }
 
 void MainWindow::loadStyleSheet()

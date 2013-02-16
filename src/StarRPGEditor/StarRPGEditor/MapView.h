@@ -7,15 +7,20 @@ namespace Ui {
 class MapView;
 }
 
+class MapViewModel;
 class MapView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MapView(QWidget *parent = 0);
-    
+    explicit MapView(QWidget *parent, QSharedPointer<MapViewModel> mapViewModel);
+    ~MapView();
+
 private:
-    Ui::MapView *ui;
-    
+    QScopedPointer<Ui::MapView> mUI;
+    QSharedPointer<MapViewModel> mMapViewModel;
+
+signals:
+    void databaseOpen();
 };
 
 #endif // MapView_H
