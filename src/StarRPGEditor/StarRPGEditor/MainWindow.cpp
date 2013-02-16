@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
     mUI->rightContainer->layout()->addWidget(mMapView.data());
     mUI->stackedWidget->setCurrentIndex(0);
     this->loadStyleSheet();
+
+    QObject::connect(mMapView.data(), SIGNAL(databaseOpen()), this, SLOT(openDatabase()));
 }
 
 MainWindow::~MainWindow() {
@@ -36,4 +38,8 @@ void MainWindow::loadStyleSheet()
     {
         qApp->setStyleSheet( qss.readAll() );
     }
+}
+
+void MainWindow::openDatabase() {
+
 }

@@ -23,6 +23,8 @@ public:
 
 private:
     void loadStyleSheet();
+    void openDatabase();
+
     QScopedPointer<Ui::MainWindow> mUI;
     QSharedPointer<MapViewModel> mMapViewModel;
     QScopedPointer<MapEventListView> mMapEventListView;
