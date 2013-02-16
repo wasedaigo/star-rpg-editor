@@ -31,71 +31,44 @@ MapView::MapView(QWidget *parent, QSharedPointer<MapViewModel> mapViewModel) :
 MapView::~MapView() {
 }
 
-// Handle layer buttons
-void MapView::resetAllLayerButtonsState() {
-    mUI->eventButton->setChecked(false);
-    mUI->panoramaButton->setChecked(false);
-    mUI->bottomLayerButton->setChecked(false);
-    mUI->middleLayerButton->setChecked(false);
-    mUI->topLayerButton->setChecked(false);
-    mUI->skyLayerButton->setChecked(false);
-}
-
 void MapView::layerEventButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->eventButton->setChecked(true);
 }
 
 void MapView::layerPanoramaButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->panoramaButton->setChecked(true);
 }
 
 void MapView::layerBottomButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->bottomLayerButton->setChecked(true);
 }
 
 void MapView::layerMiddleButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->middleLayerButton->setChecked(true);
 }
 
 void MapView::layerTopButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->topLayerButton->setChecked(true);
 }
 
 void MapView::layerSkyButtonClicked() {
-    this->resetAllLayerButtonsState();
     mUI->skyLayerButton->setChecked(true);
 }
 
 // Handle zoom buttons
-void MapView::resetAllZoomButtonsState() {
-    mUI->zoom1_1->setChecked(false);
-    mUI->zoom1_2->setChecked(false);
-    mUI->zoom1_4->setChecked(false);
-    mUI->zoom1_8->setChecked(false);
-}
-
 void MapView::zoom1_1ButtonClicked() {
-    this->resetAllZoomButtonsState();
     mUI->zoom1_1->setChecked(true);
 }
 
 void MapView::zoom1_2ButtonClicked() {
-    this->resetAllZoomButtonsState();
     mUI->zoom1_2->setChecked(true);
 }
 
 void MapView::zoom1_4ButtonClicked() {
-    this->resetAllZoomButtonsState();
     mUI->zoom1_4->setChecked(true);
 }
 
 void MapView::zoom1_8ButtonClicked() {
-    this->resetAllZoomButtonsState();
     mUI->zoom1_8->setChecked(true);
 }
 

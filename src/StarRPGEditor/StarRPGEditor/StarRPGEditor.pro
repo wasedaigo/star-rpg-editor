@@ -13,10 +13,7 @@ TEMPLATE = app
 
 #CONFIG += console
 SOURCES += *.cpp
-HEADERS += *.h \
-    MapTreeView.h \
-    MapView.h \
-    MapViewModel.h
+HEADERS += *.h
 FORMS   += *.ui
 
 RESOURCES += \

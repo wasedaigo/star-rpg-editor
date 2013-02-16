@@ -58,6 +58,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -72,6 +75,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -86,6 +92,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -100,6 +109,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -114,6 +126,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -128,6 +143,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">layerButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -149,6 +167,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">zoomButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -163,6 +184,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">zoomButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -177,6 +201,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">zoomButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -191,6 +218,9 @@
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">zoomButtonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -245,4 +275,8 @@
   <include location="main.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="layerButtonGroup"/>
+  <buttongroup name="zoomButtonGroup"/>
+ </buttongroups>
 </ui>

@@ -7,11 +7,13 @@ namespace Ui {
 class MainWindow;
 }
 
+class MapViewModel;
 class MapEventListView;
 class TilePaletteView;
 class MapTreeView;
 class MapView;
-class MapViewModel;
+class MaterialDialog;
+class ResourceModel;
 
 class MainWindow : public QMainWindow
 {
@@ -23,14 +25,18 @@ public:
 
 private:
     void loadStyleSheet();
-    void openDatabase();
 
     QScopedPointer<Ui::MainWindow> mUI;
     QSharedPointer<MapViewModel> mMapViewModel;
+    QSharedPointer<ResourceModel> mResourceModel;
     QScopedPointer<MapEventListView> mMapEventListView;
     QScopedPointer<TilePaletteView> mTilePaletteView;
     QScopedPointer<MapTreeView> mMapTreeView;
     QScopedPointer<MapView> mMapView;
+    QScopedPointer<MaterialDialog> mMaterialDialog;
+
+private slots:
+    void openDatabase();
 };
 
 #endif // MainWindow_H

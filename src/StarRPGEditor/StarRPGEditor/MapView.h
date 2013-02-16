@@ -31,9 +31,6 @@ private slots:
     void databaseButtonClicked();
 
 private:
-    void resetAllLayerButtonsState();
-    void resetAllZoomButtonsState();
-
     QScopedPointer<Ui::MapView> mUI;
     QSharedPointer<MapViewModel> mMapViewModel;
 
