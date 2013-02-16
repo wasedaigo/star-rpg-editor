@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     mUI(new Ui::MainWindow),
     mMapViewModel(new MapViewModel()),
-    mResourceModel(new ResourceModel(this, "/Users/sato.daigo/Development/git/star-rpg-framework/html/res/")),
+    mResourceModel(new ResourceModel(this, "/Users/sato.daigo/Development/git/star-rpg-framework/html/res")),
     mMapEventListView(new MapEventListView(this)),
     mTilePaletteView(new TilePaletteView(this, mResourceModel)),
     mMapTreeView(new MapTreeView(this)),
@@ -45,5 +45,6 @@ void MainWindow::loadStyleSheet()
 }
 
 void MainWindow::openDatabase() {
+    mMaterialDialog->setResourceType(ResourceModel::ResourceType_TileSet);
     mMaterialDialog->exec();
 }

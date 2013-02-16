@@ -7,9 +7,19 @@ class ResourceModel : public QObject
     Q_OBJECT
 
 public:
+    enum ResourceType {
+        ResourceType_None,
+        ResourceType_TileSet,
+        ResourceType_CharaSet,
+        ResourceType_Picture,
+        ResourceType_COUNT
+    };
+
     explicit ResourceModel(QObject *parent, QString rootPath);
     void setRootPath(QString rootPath);
     QString getRootPath() const;
+    QString getResourcePath(ResourceType resourceType) const;
+    QStringList getResources(ResourceType resourceType) const;
 
 private:
     QString mRootPath;
