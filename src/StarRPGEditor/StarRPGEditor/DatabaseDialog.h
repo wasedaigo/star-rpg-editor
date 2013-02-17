@@ -12,7 +12,7 @@ class DatabaseDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit DatabaseDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel);
+    explicit DatabaseDialog(QWidget *parent, ResourceModel *resourceModel);
     ~DatabaseDialog();
 
 signals:
@@ -21,7 +21,7 @@ public slots:
 
 private:
     QScopedPointer<Ui::DatabaseDialog> mUI;
-    QSharedPointer<ResourceModel> mResourceModel;
+    ResourceModel *mResourceModel;
 };
 
 #endif // MATERIALDIALOG_H

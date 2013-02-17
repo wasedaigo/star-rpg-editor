@@ -11,7 +11,7 @@ class DatabaseListPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DatabaseListPage(QWidget *parent = 0);
+    explicit DatabaseListPage(QWidget *parent);
     ~DatabaseListPage();
 
 signals:

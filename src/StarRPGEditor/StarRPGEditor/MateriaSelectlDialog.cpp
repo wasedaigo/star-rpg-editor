@@ -4,18 +4,18 @@
 #include <QGraphicsScene>
 #include <QDebug>
 
-MaterialSelectDialog::MaterialSelectDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel) :
+MaterialSelectDialog::MaterialSelectDialog(QWidget *parent, ResourceModel *resourceModel) :
     QDialog(parent),
     mUI(new Ui::MaterialSelectDialog),
+    mPixmap(NULL),
     mResourceModel(resourceModel),
     mListModel(new QStandardItemModel(0, 1, this)),
-    mPixmap(NULL),
-    mScene(new QGraphicsScene()),
+    mScene(new QGraphicsScene(this)),
     mCurrentResourceType(ResourceModel::ResourceType_None)
 {
     mUI->setupUi(this);
-    mUI->listView->setModel(mListModel.data());
-    mUI->graphicsView->setScene(mScene.data());
+    mUI->listView->setModel(mListModel);
+    mUI->graphicsView->setScene(mScene);
     mUI->graphicsView->setCacheMode(QGraphicsView::CacheNone);
     QObject::connect(mUI->listView, SIGNAL(clicked(QModelIndex)), this, SLOT(onListviewclicked(QModelIndex)));
 }

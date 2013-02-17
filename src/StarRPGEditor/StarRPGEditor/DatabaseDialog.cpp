@@ -2,7 +2,7 @@
 #include "DatabaseListPage.h"
 #include "ui_database_dialog.h"
 
-DatabaseDialog::DatabaseDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel) :
+DatabaseDialog::DatabaseDialog(QWidget *parent, ResourceModel *resourceModel) :
     QDialog(parent),
     mUI(new Ui::DatabaseDialog),
     mResourceModel(resourceModel)

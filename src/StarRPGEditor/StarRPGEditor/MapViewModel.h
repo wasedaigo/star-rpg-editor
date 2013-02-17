@@ -17,7 +17,7 @@ public:
         LayerType_COUNT
     };
 
-    explicit MapViewModel(QObject *parent = 0);
+    explicit MapViewModel(QObject *parent);
 
     void selectActiveLayer(LayerType layerType);
 

@@ -14,16 +14,16 @@ class TilePaletteView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TilePaletteView(QWidget *parent, QSharedPointer<ResourceModel> resourceModel);
+    explicit TilePaletteView(QWidget *parent, ResourceModel *resourceModel);
     ~TilePaletteView();
 
 private:
     void loadPalette();
-    QSharedPointer<ResourceModel> mResourceModel;
+    ResourceModel *mResourceModel;
+    QGraphicsScene *mScene;
     QScopedPointer<Ui::TilePaletteView> mUI;
     QScopedPointer<QPixmap> mSrcPixmap;
     QScopedPointer<QPixmap> mPalettePixmap;
-    QScopedPointer<QGraphicsScene> mScene;
 };
 
 #endif // PALETTEVIEW_H

@@ -5,13 +5,13 @@
 #include <QGraphicsScene>
 #include <QPixmap>
 
-TilePaletteView::TilePaletteView(QWidget *parent, QSharedPointer<ResourceModel> resourceModel) :
+TilePaletteView::TilePaletteView(QWidget *parent, ResourceModel *resourceModel) :
     QWidget(parent),
     mResourceModel(resourceModel),
+    mScene(new QGraphicsScene(this)),
     mUI(new Ui::TilePaletteView),
     mSrcPixmap(new QPixmap()),
-    mPalettePixmap(new QPixmap(256, 1024)),
-    mScene(new QGraphicsScene())
+    mPalettePixmap(new QPixmap(256, 1024))
 {
     mUI->setupUi(this);
     this->loadPalette();
@@ -29,6 +29,6 @@ void TilePaletteView::loadPalette()
     pixPaint.drawPixmap(QRect(0, 0, 256, 256), *mSrcPixmap.data(), QRect(0, 0, 256, 256));
     pixPaint.drawPixmap(QRect(0, 256, 256, 256), *mSrcPixmap.data(), QRect(256, 0, 256, 256));
 
-    mUI->graphicsView->setScene(mScene.data());
-    mScene->addPixmap(*mPalettePixmap.data());
+    mUI->graphicsView->setScene(mScene);
+    mScene->addPixmap(*mPalettePixmap);
 }

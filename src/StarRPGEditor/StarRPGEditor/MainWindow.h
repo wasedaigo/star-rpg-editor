@@ -27,13 +27,13 @@ private:
     void loadStyleSheet();
 
     QScopedPointer<Ui::MainWindow> mUI;
-    QSharedPointer<MapViewModel> mMapViewModel;
-    QSharedPointer<ResourceModel> mResourceModel;
-    QScopedPointer<MapEventListView> mMapEventListView;
-    QScopedPointer<TilePaletteView> mTilePaletteView;
-    QScopedPointer<MapTreeView> mMapTreeView;
-    QScopedPointer<MapView> mMapView;
-    QScopedPointer<DatabaseDialog> mDatabaseDialog;
+    MapViewModel *mMapViewModel;
+    ResourceModel *mResourceModel;
+    MapEventListView *mMapEventListView;
+    TilePaletteView *mTilePaletteView;
+    MapTreeView *mMapTreeView;
+    MapView *mMapView;
+    DatabaseDialog *mDatabaseDialog;
 
 private slots:
     void openDatabase();

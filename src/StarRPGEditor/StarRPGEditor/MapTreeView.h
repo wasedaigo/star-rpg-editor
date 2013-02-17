@@ -10,7 +10,7 @@ class MapTreeView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MapTreeView(QWidget *parent = 0);
+    explicit MapTreeView(QWidget *parent);
     ~MapTreeView();
 
 private:

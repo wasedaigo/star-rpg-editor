@@ -11,7 +11,7 @@ class MapEventListView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MapEventListView(QWidget *parent = 0);
+    explicit MapEventListView(QWidget *parent);
     ~MapEventListView();
 
 private:

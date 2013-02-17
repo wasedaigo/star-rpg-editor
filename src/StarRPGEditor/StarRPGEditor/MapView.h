@@ -12,7 +12,7 @@ class MapView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MapView(QWidget *parent, QSharedPointer<MapViewModel> mapViewModel);
+    explicit MapView(QWidget *parent, MapViewModel *mapViewModel);
     ~MapView();
 
 private slots:
@@ -32,7 +32,7 @@ private slots:
 
 private:
     QScopedPointer<Ui::MapView> mUI;
-    QSharedPointer<MapViewModel> mMapViewModel;
+    MapViewModel *mMapViewModel;
 
 signals:
     void databaseOpen();

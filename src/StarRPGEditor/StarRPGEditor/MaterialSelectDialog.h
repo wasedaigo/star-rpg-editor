@@ -14,7 +14,7 @@ class MaterialSelectDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit MaterialSelectDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel);
+    explicit MaterialSelectDialog(QWidget *parent, ResourceModel *resourceModel);
     ~MaterialSelectDialog();
     void setResourceType(ResourceModel::ResourceType resourceType);
 
@@ -27,10 +27,10 @@ private:
     void setImage(QString filename);
 
     QScopedPointer<Ui::MaterialSelectDialog> mUI;
-    QSharedPointer<ResourceModel> mResourceModel;
-    QScopedPointer<QStandardItemModel> mListModel;
     QScopedPointer<QPixmap> mPixmap;
-    QScopedPointer<QGraphicsScene> mScene;
+    ResourceModel *mResourceModel;
+    QStandardItemModel *mListModel;
+    QGraphicsScene *mScene;
     ResourceModel::ResourceType mCurrentResourceType;
 };
 
