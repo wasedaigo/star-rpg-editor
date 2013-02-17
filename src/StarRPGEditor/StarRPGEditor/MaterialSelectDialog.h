@@ -5,17 +5,17 @@
 #include "ResourceModel.h"
 
 namespace Ui {
-class MaterialDialog;
+class MaterialSelectDialog;
 }
 class QStandardItemModel;
 class QGraphicsScene;
 
-class MaterialDialog : public QDialog
+class MaterialSelectDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit MaterialDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel);
-    ~MaterialDialog();
+    explicit MaterialSelectDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel);
+    ~MaterialSelectDialog();
     void setResourceType(ResourceModel::ResourceType resourceType);
 
 signals:
@@ -26,7 +26,7 @@ public slots:
 private:
     void setImage(QString filename);
 
-    QScopedPointer<Ui::MaterialDialog> mUI;
+    QScopedPointer<Ui::MaterialSelectDialog> mUI;
     QSharedPointer<ResourceModel> mResourceModel;
     QScopedPointer<QStandardItemModel> mListModel;
     QScopedPointer<QPixmap> mPixmap;

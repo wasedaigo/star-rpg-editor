@@ -231,6 +231,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QToolButton" name="toolButton">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QToolButton" name="databaseButton">
          <property name="text">
           <string>...</string>
@@ -276,7 +283,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="layerButtonGroup"/>
   <buttongroup name="zoomButtonGroup"/>
+  <buttongroup name="layerButtonGroup"/>
  </buttongroups>
 </ui>

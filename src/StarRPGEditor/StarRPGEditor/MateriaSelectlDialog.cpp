@@ -1,12 +1,12 @@
-#include "MaterialDialog.h"
-#include "ui_material_dialog.h"
+#include "MaterialSelectDialog.h"
+#include "ui_material_select_dialog.h"
 #include <QStandardItemModel>
 #include <QGraphicsScene>
 #include <QDebug>
 
-MaterialDialog::MaterialDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel) :
+MaterialSelectDialog::MaterialSelectDialog(QWidget *parent, QSharedPointer<ResourceModel> resourceModel) :
     QDialog(parent),
-    mUI(new Ui::MaterialDialog),
+    mUI(new Ui::MaterialSelectDialog),
     mResourceModel(resourceModel),
     mListModel(new QStandardItemModel(0, 1, this)),
     mPixmap(NULL),
@@ -20,10 +20,10 @@ MaterialDialog::MaterialDialog(QWidget *parent, QSharedPointer<ResourceModel> re
     QObject::connect(mUI->listView, SIGNAL(clicked(QModelIndex)), this, SLOT(onListviewclicked(QModelIndex)));
 }
 
-MaterialDialog::~MaterialDialog() {
+MaterialSelectDialog::~MaterialSelectDialog() {
 }
 
-void MaterialDialog::setResourceType(ResourceModel::ResourceType resourceType) {
+void MaterialSelectDialog::setResourceType(ResourceModel::ResourceType resourceType) {
     mListModel->clear();
     QStringList filePaths = mResourceModel->getResources(resourceType);
     for (int i = 0; i < filePaths.length(); i++) {
@@ -40,11 +40,11 @@ void MaterialDialog::setResourceType(ResourceModel::ResourceType resourceType) {
     }
 }
 
-void MaterialDialog::onListviewclicked(const QModelIndex& modelIndex) {
+void MaterialSelectDialog::onListviewclicked(const QModelIndex& modelIndex) {
     setImage(modelIndex.data().toString());
 }
 
-void MaterialDialog::setImage(QString filename) {
+void MaterialSelectDialog::setImage(QString filename) {
     QString dir = mResourceModel->getResourcePath(mCurrentResourceType);
     QString path = dir + "/" + filename;
     mPixmap.reset(new QPixmap(path));

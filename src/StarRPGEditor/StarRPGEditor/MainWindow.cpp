@@ -5,7 +5,7 @@
 #include "ResourceModel.h"
 #include "MapViewModel.h"
 #include "TilePaletteView.h"
-#include "MaterialDialog.h"
+#include "MaterialSelectDialog.h"
 #include "ui_main_window.h"
 #include <QFile>
 
@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     mTilePaletteView(new TilePaletteView(this, mResourceModel)),
     mMapTreeView(new MapTreeView(this)),
     mMapView(new MapView(this, mMapViewModel)),
-    mMaterialDialog(new MaterialDialog(this, mResourceModel))
+    mMaterialDialog(new MaterialSelectDialog(this, mResourceModel))
 {
     mUI->setupUi(this);
     mUI->eventListPage->layout()->addWidget(mMapEventListView.data());
