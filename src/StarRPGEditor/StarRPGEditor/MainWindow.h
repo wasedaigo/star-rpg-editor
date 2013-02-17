@@ -12,7 +12,7 @@ class MapEventListView;
 class TilePaletteView;
 class MapTreeView;
 class MapView;
-class MaterialSelectDialog;
+class DatabaseDialog;
 class ResourceModel;
 
 class MainWindow : public QMainWindow
@@ -33,7 +33,7 @@ private:
     QScopedPointer<TilePaletteView> mTilePaletteView;
     QScopedPointer<MapTreeView> mMapTreeView;
     QScopedPointer<MapView> mMapView;
-    QScopedPointer<MaterialSelectDialog> mMaterialDialog;
+    QScopedPointer<DatabaseDialog> mDatabaseDialog;
 
 private slots:
     void openDatabase();

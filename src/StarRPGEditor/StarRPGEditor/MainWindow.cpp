@@ -5,7 +5,7 @@
 #include "ResourceModel.h"
 #include "MapViewModel.h"
 #include "TilePaletteView.h"
-#include "MaterialSelectDialog.h"
+#include "DatabaseDialog.h"
 #include "ui_main_window.h"
 #include <QFile>
 
@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     mTilePaletteView(new TilePaletteView(this, mResourceModel)),
     mMapTreeView(new MapTreeView(this)),
     mMapView(new MapView(this, mMapViewModel)),
-    mMaterialDialog(new MaterialSelectDialog(this, mResourceModel))
+    mDatabaseDialog(new DatabaseDialog(this, mResourceModel))
 {
     mUI->setupUi(this);
     mUI->eventListPage->layout()->addWidget(mMapEventListView.data());
@@ -45,6 +45,5 @@ void MainWindow::loadStyleSheet()
 }
 
 void MainWindow::openDatabase() {
-    mMaterialDialog->setResourceType(ResourceModel::ResourceType_TileSet);
-    mMaterialDialog->exec();
+    mDatabaseDialog->exec();
 }

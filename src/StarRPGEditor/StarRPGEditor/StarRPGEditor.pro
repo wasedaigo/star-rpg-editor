@@ -13,8 +13,10 @@ TEMPLATE = app
 
 #CONFIG += console
 SOURCES += *.cpp
-HEADERS += *.h
-FORMS   += *.ui
+HEADERS += *.h \
+    DatabaseListPage.h
+FORMS   += *.ui \
+    database_list_page.ui
 
 RESOURCES += \
     main.qrc
