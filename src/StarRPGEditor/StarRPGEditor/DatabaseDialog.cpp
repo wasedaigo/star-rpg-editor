@@ -1,5 +1,7 @@
 #include "DatabaseDialog.h"
-#include "DatabaseListPage.h"
+#include "DatabaseListView.h"
+#include "DatabaseTileSetView.h"
+#include <QHBoxLayout>
 #include "ui_database_dialog.h"
 
 DatabaseDialog::DatabaseDialog(QWidget *parent, ResourceModel *resourceModel) :
@@ -8,7 +10,14 @@ DatabaseDialog::DatabaseDialog(QWidget *parent, ResourceModel *resourceModel) :
     mResourceModel(resourceModel)
 {
     mUI->setupUi(this);
-    mUI->tabWidget->addTab(new DatabaseListPage(this), "Tile Set");
+
+    QWidget *pWidget = new QWidget(this);
+    QHBoxLayout *pLayout = new QHBoxLayout(this);
+    pLayout->addWidget(new DatabaseListView(this));
+    pLayout->addWidget(new DatabaseTileSetView(this, resourceModel));
+    pWidget->setLayout(pLayout);
+
+    mUI->tabWidget->addTab(pWidget, "Tile Set");
 }
 
 DatabaseDialog::~DatabaseDialog() {

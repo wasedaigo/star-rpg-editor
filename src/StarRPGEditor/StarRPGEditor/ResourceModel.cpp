@@ -8,9 +8,9 @@ static QString resourcePath[] = {
     "picture" //ResourceType_Picture
 };
 
-ResourceModel::ResourceModel(QObject *parent, QString rootPath) :
+ResourceModel::ResourceModel(QObject *parent) :
     QObject(parent),
-    mRootPath(rootPath)
+    mRootPath("")
 {
 }
 

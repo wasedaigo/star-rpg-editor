@@ -2,6 +2,7 @@
 #include "MapEventListView.h"
 #include "MapTreeView.h"
 #include "MapView.h"
+#include "GameDataModel.h"
 #include "ResourceModel.h"
 #include "MapViewModel.h"
 #include "TilePaletteView.h"
@@ -12,14 +13,16 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     mUI(new Ui::MainWindow),
-    mMapViewModel(new MapViewModel(this)),
-    mResourceModel(new ResourceModel(this, "/Users/sato.daigo/Development/git/star-rpg-framework/html/res")),
+    mGameDataModel(new GameDataModel(this)),
+    mResourceModel(new ResourceModel(this)),
     mMapEventListView(new MapEventListView(this)),
     mTilePaletteView(new TilePaletteView(this, mResourceModel)),
     mMapTreeView(new MapTreeView(this)),
-    mMapView(new MapView(this, mMapViewModel)),
+    mMapView(new MapView(this, mGameDataModel->mMapViewModel)),
     mDatabaseDialog(new DatabaseDialog(this, mResourceModel))
 {
+    mResourceModel->setRootPath("/Users/sato.daigo/Development/git/star-rpg-framework/html/res");
+    mTilePaletteView->loadPalette();
     mUI->setupUi(this);
     mUI->eventListPage->layout()->addWidget(mMapEventListView);
     mUI->palettePage->layout()->addWidget(mTilePaletteView);

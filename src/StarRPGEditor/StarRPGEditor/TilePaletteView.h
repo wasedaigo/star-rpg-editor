@@ -16,9 +16,9 @@ class TilePaletteView : public QWidget
 public:
     explicit TilePaletteView(QWidget *parent, ResourceModel *resourceModel);
     ~TilePaletteView();
+    void loadPalette();
 
 private:
-    void loadPalette();
     ResourceModel *mResourceModel;
     QGraphicsScene *mScene;
     QScopedPointer<Ui::TilePaletteView> mUI;

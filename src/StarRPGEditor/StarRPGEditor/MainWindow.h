@@ -14,6 +14,7 @@ class MapTreeView;
 class MapView;
 class DatabaseDialog;
 class ResourceModel;
+class GameDataModel;
 
 class MainWindow : public QMainWindow
 {
@@ -27,7 +28,7 @@ private:
     void loadStyleSheet();
 
     QScopedPointer<Ui::MainWindow> mUI;
-    MapViewModel *mMapViewModel;
+    GameDataModel *mGameDataModel;
     ResourceModel *mResourceModel;
     MapEventListView *mMapEventListView;
     TilePaletteView *mTilePaletteView;

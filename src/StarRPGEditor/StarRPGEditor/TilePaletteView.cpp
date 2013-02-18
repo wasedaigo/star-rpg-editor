@@ -14,7 +14,6 @@ TilePaletteView::TilePaletteView(QWidget *parent, ResourceModel *resourceModel) 
     mPalettePixmap(new QPixmap(256, 1024))
 {
     mUI->setupUi(this);
-    this->loadPalette();
 }
 
 TilePaletteView::~TilePaletteView()

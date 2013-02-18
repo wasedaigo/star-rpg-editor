@@ -15,7 +15,7 @@ public:
         ResourceType_COUNT
     };
 
-    explicit ResourceModel(QObject *parent, QString rootPath);
+    explicit ResourceModel(QObject *parent);
     void setRootPath(QString rootPath);
     QString getRootPath() const;
     QString getResourcePath(ResourceType resourceType) const;
