@@ -23,7 +23,11 @@ signals:
 public slots:
     void onListviewclicked(const QModelIndex& modelIndex);
 
+public:
+    QString mSelectedResourceName;
+
 private:
+    QString getNoneSelectionName();
     void setImage(QString filename);
 
     QScopedPointer<Ui::MaterialSelectDialog> mUI;

@@ -23,9 +23,18 @@ MaterialSelectDialog::MaterialSelectDialog(QWidget *parent, ResourceModel *resou
 MaterialSelectDialog::~MaterialSelectDialog() {
 }
 
+QString MaterialSelectDialog::getNoneSelectionName() {
+    return "none";
+}
+
 void MaterialSelectDialog::setResourceType(ResourceModel::ResourceType resourceType) {
     mListModel->clear();
     QStringList filePaths = mResourceModel->getResources(resourceType);
+
+    QStandardItem *pItem = new QStandardItem(this->getNoneSelectionName());
+    pItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    mListModel->appendRow(pItem);
+
     for (int i = 0; i < filePaths.length(); i++) {
         QStandardItem *pItem = new QStandardItem(filePaths[i]);
         pItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
@@ -34,10 +43,7 @@ void MaterialSelectDialog::setResourceType(ResourceModel::ResourceType resourceT
     mCurrentResourceType = resourceType;
 
     // Select the first item
-    if (filePaths.length() > 0) {
-        mUI->listView->selectionModel()->select(mListModel->index(0, 0), QItemSelectionModel::Select);
-        setImage(filePaths[0]);
-    }
+    mUI->listView->selectionModel()->select(mListModel->index(0, 0), QItemSelectionModel::Select);
 }
 
 void MaterialSelectDialog::onListviewclicked(const QModelIndex& modelIndex) {
@@ -45,10 +51,16 @@ void MaterialSelectDialog::onListviewclicked(const QModelIndex& modelIndex) {
 }
 
 void MaterialSelectDialog::setImage(QString filename) {
+    mScene->clear();
+    if (filename == this->getNoneSelectionName()) {
+        mSelectedResourceName = "";
+        return;
+    }
+
+    mSelectedResourceName = filename;
     QString dir = mResourceModel->getResourcePath(mCurrentResourceType);
     QString path = dir + "/" + filename;
     mPixmap.reset(new QPixmap(path));
-    mScene->clear();
     mScene->addPixmap(*mPixmap.data());
 
     mUI->graphicsView->setSceneRect(mPixmap->rect());

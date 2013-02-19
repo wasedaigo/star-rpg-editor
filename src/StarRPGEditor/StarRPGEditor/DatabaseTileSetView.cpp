@@ -4,6 +4,7 @@
 #include "ResourceModel.h"
 #include "ui_database_tile_set_view.h"
 #include <QHBoxLayout>
+#include <QDebug>
 
 DatabaseTileSetView::DatabaseTileSetView(QWidget *parent, ResourceModel *resourceModel) :
     QWidget(parent),
@@ -20,4 +21,5 @@ DatabaseTileSetView::~DatabaseTileSetView() {
 void DatabaseTileSetView::groundAssetSelectButtonClicked() {
     mMaterialSelectDialog->setResourceType(ResourceModel::ResourceType_TileSet);
     mMaterialSelectDialog->exec();
+    mUI->groundAssetLineEdit->setText(mMaterialSelectDialog->mSelectedResourceName);
 }
