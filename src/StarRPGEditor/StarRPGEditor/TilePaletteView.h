@@ -6,24 +6,21 @@
 namespace Ui {
 class TilePaletteView;
 }
-class ResourceModel;
-class QGraphicsScene;
-class QPixmap;
+class TileSetViewModel;
+class TilePaletteGraphicsView;
 
 class TilePaletteView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TilePaletteView(QWidget *parent, ResourceModel *resourceModel);
+    explicit TilePaletteView(QWidget *parent, TileSetViewModel *tileSetViewModel);
     ~TilePaletteView();
     void loadPalette();
 
 private:
-    ResourceModel *mResourceModel;
-    QGraphicsScene *mScene;
+    TileSetViewModel *mTileSetViewModel;
     QScopedPointer<Ui::TilePaletteView> mUI;
-    QScopedPointer<QPixmap> mSrcPixmap;
-    QScopedPointer<QPixmap> mPalettePixmap;
+    TilePaletteGraphicsView *mTilePaletteGraphicsView;
 };
 
 #endif // PALETTEVIEW_H

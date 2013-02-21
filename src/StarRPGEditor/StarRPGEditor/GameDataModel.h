@@ -5,15 +5,17 @@
 #include <QStringList>
 
 class MapViewModel;
+class ResourceModel;
 class TileSetViewModel;
 class GameDataModel : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit GameDataModel(QObject *parent = 0);
+    explicit GameDataModel(QObject *parent);
 
 public:
+    ResourceModel *mResourceModel;
     //EventViewModel mEventViewModel;
     MapViewModel *mMapViewModel;
     TileSetViewModel *mTileSetViewModel;

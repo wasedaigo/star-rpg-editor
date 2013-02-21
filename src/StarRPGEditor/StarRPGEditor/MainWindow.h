@@ -28,8 +28,8 @@ private:
     void loadStyleSheet();
 
     QScopedPointer<Ui::MainWindow> mUI;
-    GameDataModel *mGameDataModel;
     ResourceModel *mResourceModel;
+    GameDataModel *mGameDataModel;
     MapEventListView *mMapEventListView;
     TilePaletteView *mTilePaletteView;
     MapTreeView *mMapTreeView;

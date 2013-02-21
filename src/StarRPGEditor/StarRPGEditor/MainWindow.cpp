@@ -14,14 +14,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     mUI(new Ui::MainWindow),
     mGameDataModel(new GameDataModel(this)),
-    mResourceModel(new ResourceModel(this)),
     mMapEventListView(new MapEventListView(this)),
-    mTilePaletteView(new TilePaletteView(this, mResourceModel)),
+    mTilePaletteView(new TilePaletteView(this, mGameDataModel->mTileSetViewModel)),
     mMapTreeView(new MapTreeView(this)),
     mMapView(new MapView(this, mGameDataModel->mMapViewModel)),
-    mDatabaseDialog(new DatabaseDialog(this, mResourceModel))
+    mDatabaseDialog(new DatabaseDialog(this, mGameDataModel))
 {
-    mResourceModel->setRootPath("/Users/sato.daigo/Development/git/star-rpg-framework/html/res");
     mTilePaletteView->loadPalette();
     mUI->setupUi(this);
     mUI->eventListPage->layout()->addWidget(mMapEventListView);

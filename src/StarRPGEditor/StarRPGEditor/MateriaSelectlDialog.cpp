@@ -44,6 +44,7 @@ void MaterialSelectDialog::setResourceType(ResourceModel::ResourceType resourceT
 
     // Select the first item
     mUI->listView->selectionModel()->select(mListModel->index(0, 0), QItemSelectionModel::Select);
+    mScene->clear();
 }
 
 void MaterialSelectDialog::onListviewclicked(const QModelIndex& modelIndex) {
