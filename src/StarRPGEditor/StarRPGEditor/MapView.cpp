@@ -22,8 +22,6 @@ MapView::MapView(QWidget *parent, MapViewModel *mapViewModel) :
     QObject::connect(mUI->zoom1_4, SIGNAL(clicked()), this, SLOT(zoom1_4ButtonClicked()));
     QObject::connect(mUI->zoom1_8, SIGNAL(clicked()), this, SLOT(zoom1_8ButtonClicked()));
 
-    QObject::connect(mUI->databaseButton, SIGNAL(clicked()), this, SLOT(databaseButtonClicked()));
-
     layerEventButtonClicked();
     zoom1_1ButtonClicked();
 }
@@ -70,9 +68,4 @@ void MapView::zoom1_4ButtonClicked() {
 
 void MapView::zoom1_8ButtonClicked() {
     mUI->zoom1_8->setChecked(true);
-}
-
-// Open Database Window
-void MapView::databaseButtonClicked() {
-    emit databaseOpen();
 }

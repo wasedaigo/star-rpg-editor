@@ -28,14 +28,10 @@ private slots:
     void zoom1_4ButtonClicked();
     void zoom1_8ButtonClicked();
 
-    void databaseButtonClicked();
-
 private:
     QScopedPointer<Ui::MapView> mUI;
     MapViewModel *mMapViewModel;
 
-signals:
-    void databaseOpen();
 };
 
 #endif // MapView_H

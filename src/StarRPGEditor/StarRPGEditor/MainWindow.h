@@ -1,5 +1,5 @@
-#ifndef MainWindow_H
-#define MainWindow_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QMainWindow>
 
@@ -7,14 +7,9 @@ namespace Ui {
 class MainWindow;
 }
 
-class MapViewModel;
-class MapEventListView;
-class TilePaletteView;
-class MapTreeView;
-class MapView;
-class DatabaseDialog;
-class ResourceModel;
 class GameDataModel;
+class DatabaseScene;
+class MapEditorScene;
 
 class MainWindow : public QMainWindow
 {
@@ -28,16 +23,12 @@ private:
     void loadStyleSheet();
 
     QScopedPointer<Ui::MainWindow> mUI;
-    ResourceModel *mResourceModel;
     GameDataModel *mGameDataModel;
-    MapEventListView *mMapEventListView;
-    TilePaletteView *mTilePaletteView;
-    MapTreeView *mMapTreeView;
-    MapView *mMapView;
-    DatabaseDialog *mDatabaseDialog;
+    DatabaseScene *mDatabaseScene;
+    MapEditorScene *mMapEditorScene;
 
 private slots:
-    void openDatabase();
+    void databaseButtonClicked();
 };
 
-#endif // MainWindow_H
+#endif // MAINWINDOW_H
