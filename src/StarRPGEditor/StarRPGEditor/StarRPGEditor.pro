@@ -10,6 +10,11 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = StarRPGEditor
 TEMPLATE = app
+DEPENDPATH += .
+
+include(./component/component.pri)
+include(./scene/scene.pri)
+include(./model/model.pri)
 
 #CONFIG += console
 SOURCES += *.cpp
