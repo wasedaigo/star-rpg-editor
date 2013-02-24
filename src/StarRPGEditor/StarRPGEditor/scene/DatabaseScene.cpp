@@ -5,8 +5,8 @@
 #include <QHBoxLayout>
 #include "ui_database_scene.h"
 
-DatabaseScene::DatabaseScene(QWidget *parent, GameDataModel *gameDataModel) :
-    QWidget(parent),
+DatabaseScene::DatabaseScene(QWidget *parent, NavigationController *navigationController, GameDataModel *gameDataModel) :
+    BaseScene(parent, navigationController),
     mUI(new Ui::DatabaseScene)
 {
     mUI->setupUi(this);

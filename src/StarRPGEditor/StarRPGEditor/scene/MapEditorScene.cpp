@@ -1,3 +1,4 @@
+#include "BaseScene.h"
 #include "MapEditorScene.h"
 #include "MapEventListView.h"
 #include "MapTreeView.h"
@@ -6,8 +7,8 @@
 #include "TilePaletteView.h"
 #include "ui_map_editor_scene.h"
 
-MapEditorScene::MapEditorScene(QWidget *parent, GameDataModel *gameDataModel) :
-    QWidget(parent),
+MapEditorScene::MapEditorScene(QWidget *parent, NavigationController *navigationController, GameDataModel *gameDataModel) :
+    BaseScene(parent, navigationController),
     mUI(new Ui::MapEditorScene),
     mMapEventListView(new MapEventListView(this)),
     mTilePaletteView(new TilePaletteView(this, gameDataModel->mTileSetViewModel)),

@@ -1,7 +1,7 @@
 #ifndef MAPEDITORSCENE_H
 #define MAPEDITORSCENE_H
 
-#include <QWidget>
+#include "BaseScene.h"
 
 namespace Ui {
 class MapEditorScene;
@@ -12,13 +12,14 @@ class MapEventListView;
 class TilePaletteView;
 class MapTreeView;
 class MapView;
+class NavigationController;
 
-class MapEditorScene : public QWidget
+class MapEditorScene : public BaseScene
 {
     Q_OBJECT
     
 public:
-    explicit MapEditorScene(QWidget *parent, GameDataModel *gameDataModel);
+    explicit MapEditorScene(QWidget *parent, NavigationController *navigationController, GameDataModel *gameDataModel);
     ~MapEditorScene();
 
 private:

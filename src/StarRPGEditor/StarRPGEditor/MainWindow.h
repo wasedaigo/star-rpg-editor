@@ -8,8 +8,8 @@ class MainWindow;
 }
 
 class GameDataModel;
-class DatabaseScene;
-class MapEditorScene;
+class BaseScene;
+class NavigationController;
 
 class MainWindow : public QMainWindow
 {
@@ -21,14 +21,18 @@ public:
 
 private:
     void loadStyleSheet();
+    BaseScene* createScene(const QString& sceneName);
 
     QScopedPointer<Ui::MainWindow> mUI;
+    NavigationController *mNavigationController;
     GameDataModel *mGameDataModel;
-    DatabaseScene *mDatabaseScene;
-    MapEditorScene *mMapEditorScene;
+    QWidget *mCurrentScene;
 
 private slots:
     void databaseButtonClicked();
+    void backButtonClicked();
+    void onScenePushed(const QString& sceneName);
+    void onScenePoped();
 };
 
 #endif // MAINWINDOW_H
