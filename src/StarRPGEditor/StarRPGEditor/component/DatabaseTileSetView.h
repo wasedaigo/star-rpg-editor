@@ -19,7 +19,9 @@ public:
     ~DatabaseTileSetView();
 
 private slots:
-    void groundComboBoxChanged(int);
+    void animeComboBoxChanged(int);
+    void terrainComboBoxChanged(int);
+    void plainComboBoxChanged(int);
 
 signals:
     

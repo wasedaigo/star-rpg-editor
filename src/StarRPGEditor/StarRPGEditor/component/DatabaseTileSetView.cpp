@@ -18,9 +18,20 @@ DatabaseTileSetView::DatabaseTileSetView(QWidget *parent, ResourceModel *resourc
     mTilePaletteGraphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mUI->setupUi(this);
 
-    mUI->groundComboBox->addItem("None");
-    mUI->groundComboBox->addItems(resourceModel->getResources(ResourceModel::ResourceType_TileSet));
-    QObject::connect(mUI->groundComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(groundComboBoxChanged(int)));
+    // Anime
+    mUI->animeComboBox->addItem("None");
+    mUI->animeComboBox->addItems(resourceModel->getResources(ResourceModel::ResourceType_TileSet));
+    QObject::connect(mUI->animeComboBox, SIGNAL(animeIndexChanged(int)), this, SLOT(animeComboBoxChanged(int)));
+
+    // Terrain
+    mUI->terrainComboBox->addItem("None");
+    mUI->terrainComboBox->addItems(resourceModel->getResources(ResourceModel::ResourceType_TileSet));
+    QObject::connect(mUI->terrainComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(terrainComboBoxChanged(int)));
+
+    // Plain
+    mUI->plainComboBox->addItem("None");
+    mUI->plainComboBox->addItems(resourceModel->getResources(ResourceModel::ResourceType_TileSet));
+    QObject::connect(mUI->plainComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(plainComboBoxChanged(int)));
 
     mUI->tilePaletteContainer->layout()->addWidget(mTilePaletteGraphicsView);
 }
@@ -28,8 +39,20 @@ DatabaseTileSetView::DatabaseTileSetView(QWidget *parent, ResourceModel *resourc
 DatabaseTileSetView::~DatabaseTileSetView() {
 }
 
-void DatabaseTileSetView::groundComboBoxChanged(int index) {
-    QString text = mUI->groundComboBox->currentText();
-    mTileSetViewModel->setGround(text);
+void DatabaseTileSetView::animeComboBoxChanged(int index) {
+    QString text = mUI->animeComboBox->currentText();
+    mTileSetViewModel->setAnime(text);
+    mTilePaletteGraphicsView->loadPalette();
+}
+
+void DatabaseTileSetView::terrainComboBoxChanged(int index) {
+    QString text = mUI->terrainComboBox->currentText();
+    mTileSetViewModel->setTerrain(text);
+    mTilePaletteGraphicsView->loadPalette();
+}
+
+void DatabaseTileSetView::plainComboBoxChanged(int index) {
+    QString text = mUI->plainComboBox->currentText();
+    mTileSetViewModel->setPlain(text);
     mTilePaletteGraphicsView->loadPalette();
 }

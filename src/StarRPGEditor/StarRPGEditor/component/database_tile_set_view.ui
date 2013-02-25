@@ -38,27 +38,27 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox"/>
+           <widget class="QComboBox" name="animeComboBox"/>
           </item>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>Ground</string>
+             <string>Terrain</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="groundComboBox"/>
+           <widget class="QComboBox" name="terrainComboBox"/>
           </item>
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Object</string>
+             <string>Plain</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox_3"/>
+           <widget class="QComboBox" name="plainComboBox"/>
           </item>
          </layout>
         </item>

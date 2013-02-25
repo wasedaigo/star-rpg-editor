@@ -13,8 +13,8 @@ public:
     explicit TileSetViewModel(QObject *parent, ResourceModel *resourceModel);
 
     void setAnime(const QString& filename);
-    void setGround(const QString& filename);
-    void setObject(const QString& filename);
+    void setTerrain(const QString& filename);
+    void setPlain(const QString& filename);
     QSharedPointer<QPixmap> getPixmap();
 
 signals:
@@ -22,11 +22,11 @@ signals:
 private:
     ResourceModel *mResourceModel;
     QString mAnimeFilename;
-    QString mGroundFilename;
-    QString mObjectFilename;
+    QString mTerrainFilename;
+    QString mPlainFilename;
     QSharedPointer<QPixmap> mDstPixmap;
     QScopedPointer<QPixmap> mSrcAnimePixmap;
-    QScopedPointer<QPixmap> mSrcGroundPixmap;
+    QScopedPointer<QPixmap> mSrcPlainPixmap;
     QScopedPointer<QPixmap> mSrcObjectPixmap;
     bool mDirty;
 };
