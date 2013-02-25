@@ -17,7 +17,10 @@ DatabaseTileSetView::DatabaseTileSetView(QWidget *parent, ResourceModel *resourc
 {
     mTilePaletteGraphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mUI->setupUi(this);
-    QObject::connect(mUI->groundAssetSelectButton, SIGNAL(clicked()), this, SLOT(groundAssetSelectButtonClicked()));
+
+    mUI->groundComboBox->addItem("None");
+    mUI->groundComboBox->addItems(resourceModel->getResources(ResourceModel::ResourceType_TileSet));
+    QObject::connect(mUI->groundComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(groundComboBoxChanged(int)));
 
     mUI->tilePaletteContainer->layout()->addWidget(mTilePaletteGraphicsView);
 }
@@ -25,10 +28,8 @@ DatabaseTileSetView::DatabaseTileSetView(QWidget *parent, ResourceModel *resourc
 DatabaseTileSetView::~DatabaseTileSetView() {
 }
 
-void DatabaseTileSetView::groundAssetSelectButtonClicked() {
-    mMaterialSelectDialog->setResourceType(ResourceModel::ResourceType_TileSet);
-    mMaterialSelectDialog->exec();
-    mUI->groundAssetLineEdit->setText(mMaterialSelectDialog->mSelectedResourceName);
-    mTileSetViewModel->setGround(mMaterialSelectDialog->mSelectedResourceName);
+void DatabaseTileSetView::groundComboBoxChanged(int index) {
+    QString text = mUI->groundComboBox->currentText();
+    mTileSetViewModel->setGround(text);
     mTilePaletteGraphicsView->loadPalette();
 }

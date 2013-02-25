@@ -19,7 +19,7 @@ public:
     ~DatabaseTileSetView();
 
 private slots:
-    void groundAssetSelectButtonClicked();
+    void groundComboBoxChanged(int);
 
 signals:
     
